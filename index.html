@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Velid Đogaz - Personal Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/dce4bbf5ba.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/dce4bbf5ba.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I'm <span>Velid Đogaz</span><br> from Bosnia and Herzegovina</h1>
+            </div>
+        </div>
+    </div>
+
+<!--about-->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I was born in Srebrenica, Bosnia and Herzegovina in 1995, during the Bosnian War. Despite the difficult circumstances, I persevered and completed my education at the Medical high school in Tuzla. However, I soon realized that my true passion was in the field of information technology.<br>
+                    <br>
+                    I decided to pursue my passion and enrolled at the American University in Bosnia and Herzegovina, where I studied information technology. During my time at the university, I gained extensive knowledge and skills in various areas of IT, including programming languages, software development, and database management.<br>
+                    <br>
+                    My dedication and hard work paid off, and I graduated with a degree in information technology. Since then, I have been working in the field, gaining valuable experience and honing my skills. I have worked on various projects, including website development, software development, and database management.<br>
+                    <br>
+                    I am a highly motivated and detail-oriented professional who is passionate about the field of information technology. I am always eager to learn and stay up-to-date with the latest technologies and trends in the industry. My excellent communication and collaboration skills make me a valuable team member, and my ability to work well under pressure allows me to consistently deliver high-quality work.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UX/UI</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Development</span><br>Building Android/OS apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2020 - 2022</span><br>Visoka škola za finansije i računovodstvo FINra Tuzla</li>
+                        <li><span>2018 - 2019</span><br>Office for joint affairs of cantonal
+                            bodies of Tuzla Canton</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2013 - 2017</span><br>American University in Bosnia and Herzegovina</li>
+                        <li><span>2009 - 2013</span><br>Medical High School Tuzla</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------ services -------->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>A skilled web designer with over 4 years of experience in creating visually appealing and user-friendly websites.</p>
+                <p class="moretext">
+                    Seeking a position that allows me to utilize my expertise in web design to create unique and effective designs that exceed client expectations.</p>
+                <a class="moreless-button" href="#">Read more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>UX/UI Design</h2>
+                <p>I am a skilled UI/UX Designer with 4 years of experience designing digital products that meet business objectives and user needs.</p> 
+                <p class="moretext">
+                    My expertise includes conducting user research, creating wireframes and prototypes, developing visual designs, and collaborating with cross-functional teams to deliver high-quality products. I am proficient in various design tools such as Adobe Creative Suite, and prototyping tools like InVision and Marvel.</p>
+                <a class="moreless-button" href="#">Read more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-circle-nodes"></i>
+                <h2>Web Developer</h2>
+                <p>I am a highly motivated and experienced web developer seeking a challenging role in a dynamic and innovative company.</p>
+                <p class="moretext">
+                    With a proven track record of delivering high-quality web applications, I am committed to achieving outstanding results for clients and driving business growth through cutting-edge web development solutions.</p>
+                <a class="moreless-button" href="#">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var readMoreBtns = document.querySelectorAll('.moreless-button');
+
+readMoreBtns.forEach(function(readMoreBtn) {
+  readMoreBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var moreText = this.previousElementSibling;
+
+    moreText.classList.toggle('moretext-expanded');
+
+    if (moreText.classList.contains('moretext-expanded')) {
+      this.textContent = 'Read less';
+    } else {
+      this.textContent = 'Read more';
+    }
+  });
+});
+</script>
+
+<!------- portfolio ------->
+
+<div id="skill">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+            <p>HTML</p>
+            <div class="skill-container">
+                <div class="skill html">75%</div>
+            </div>
+
+            <p>CSS</p>
+            <div class="skill-container">
+                <div class="skill css">70%</div>
+            </div>
+
+            <p>JavaScript</p>
+            <div class="skill-container">
+                <div class="skill js">60%</div>
+            </div>
+	</div>
+</div>
+
+<!-------- contact -------->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>veliddjogaz@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>+387 60 34 48 440</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/velid.djogaz"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://github.com/velid-djogaz"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/ciiciibaan/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/velid-djogaz/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div>
+                    <a href="images/CV - Velid Djogaz.pdf" download class="btn btn2">Download CV - Bosnian</a>
+                    <a href="images/CV - Velid Djogaz - English.pdf" download class="btn btn2">Download CV - English</a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form action="https://formsubmit.co/veliddjogaz@gmail.com" method="POST">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="#contact">
+                    <button type="submit " class="btn btn2">Submit</button>
+                       
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<script src="tab.js"></script>
+
+<script src="toggle.js"></script>
+
+</body>
+</html>
